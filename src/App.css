@@ -1,64 +1,113 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.app-container {
+.container {
   max-width: 600px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background-color: #ffffff; /* White card background */
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
 }
 
-h1 {
+h2 {
+  color: #1e90ff; /* Dodger blue */
   text-align: center;
-  color: #333;
-}
-
-.location-selector,
-.travelers-list,
-.request-component {
   margin-bottom: 20px;
 }
 
+/* Input Styles */
 input[type="text"] {
   width: calc(100% - 20px);
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #1e90ff; /* Dodger blue border */
+  border-radius: 5px;
+  font-size: 16px;
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+  border-color: #ff4500; /* Orange Red on focus */
+  box-shadow: 0 0 8px rgba(255, 69, 0, 0.3); /* Orange Red shadow */
+}
+
+/* Suggestions List */
+.suggestions-list {
+  width: 100%; /* Make the dropdown width consistent with the input */
+  max-height: 150px; /* Set a maximum height for the dropdown */
+  overflow-y: auto; /* Enable scrolling if the content exceeds the max height */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+  background-color: #fff; /* Background color of the dropdown */
+  border: 1px solid #ccc; /* Border around the dropdown */
+  border-radius: 4px; /* Rounded corners for better aesthetics */
+  z-index: 1000; /* Ensure the dropdown is on top of other elements */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  overflow-y: auto;
+  background-color: #ffffff; /* White background */
   border-radius: 5px;
 }
 
+
+.suggestions-list li {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.suggestions-list li:hover {
+  background-color: #1e90ff; /* Dodger blue on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+/* Button Styles */
 button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: #fff;
+  width: 100%;
+  padding: 12px;
+  background-color: #1e90ff; /* Dodger blue */
+  color: #ffffff;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: #218838;
+  background-color: #ff4500; /* Orange Red on hover */
 }
 
-.traveler {
-  padding: 10px;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
 
-.traveler:hover {
-  background-color: #e9ecef;
-}
+  input[type="text"] {
+    padding: 8px;
+    font-size: 14px;
+  }
 
-p {
-  margin: 5px 0;
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
